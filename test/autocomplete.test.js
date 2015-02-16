@@ -28,16 +28,24 @@ test('writes to query stream', function(t) {
 
 test('sets loading correctly', function(t) {
 	var query_stream = through(write)
-	var auto = autocomplete(dom(), query_stream)
+	var el = dom('<div class="autocomplete"></div>').children[0]
+	var auto = autocomplete(el, query_stream)
+
+	t.plan(6)
 
 	auto.write('abc')
+
 	t.ok(auto.component.state.loading)
+	t.ok(auto.parent_el.className.indexOf('loading') !== -1)
+	t.ok(auto.parent_el.className.indexOf('autocomplete') !== -1)
 
 	function write() {
 		process.nextTick(function() {
 			query_stream.queue([])
 
 			t.notOk(auto.component.state.loading)
+			t.ok(auto.parent_el.className.indexOf('loading') === -1)
+			t.ok(auto.parent_el.className.indexOf('autocomplete') !== -1)
 			t.end()
 		})
 	}
@@ -46,10 +54,7 @@ test('sets loading correctly', function(t) {
 test('click selects item', function(t) {
 	var click_el
 	var query_stream = through(write)
-	var auto = autocomplete(
-		dom('<div class="autocomplete"></div>'),
-		query_stream
-	)
+	var auto = autocomplete(dom(), query_stream)
 
 	t.plan(2)
 
