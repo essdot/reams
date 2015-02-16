@@ -32,8 +32,11 @@ function autocomplete_render(component) {
 		}
 
 		return state.results.map(function(result) {
-			var clickHandler = function() { 
-				select_result(result) 
+			var clickHandler = function(ev) {
+				ev.stopPropagation()
+				ev.preventDefault()
+
+				select_result(result)
 			}
 
 			return (
@@ -48,7 +51,7 @@ function autocomplete_render(component) {
 
 	function get_no_results_found() {
 		var no_results =
-			!state.results.length && 
+			!state.results.length &&
 			typeof state.query === 'string' &&
 			!state.loading
 		
