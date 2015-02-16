@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "browserify test/*.test.js -t reactify -d | jsdom-eval",
+    "test": "sh scripts/test.sh",
     "watch": "watchify index.js -o dist/bundle.js -t reactify -d",
     "bundle": "browserify index.js -t reactify -o dist/bundle.js -d"
   },
