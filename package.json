@@ -6,7 +6,7 @@
   "scripts": {
     "test": "sh scripts/test.sh",
     "watch": "watchify index.js -o dist/bundle.js -t reactify -d",
-    "bundle": "browserify index.js -t reactify -o dist/bundle.js -d"
+    "bundle": "mkdir -p dist; browserify index.js -t reactify -o dist/bundle.js -d"
   },
   "author": "",
   "license": "ISC",
