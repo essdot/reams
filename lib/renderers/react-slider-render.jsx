@@ -1,4 +1,4 @@
-var React = require('react')
+var React = require('../modules/react')
 
 module.exports = render_slider
 
