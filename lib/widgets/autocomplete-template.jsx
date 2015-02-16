@@ -9,16 +9,24 @@ module.exports = function() {
 
 function autocomplete_render(component) {
 	var state = component.state
-	var select_result = component.select_result
+	var select_result = component.select_result || function() {}
 
 	var template = (
 		<div className="autocomplete-content">
 			<input className="autocomplete-query" type="search" name="query"/>
 			<ul className="autocomplete-results">
-				{get_result_nodes()}
+				{state.results.map(function(result){ return (
+				<li key={result.id}>
+					<a href="#" onClick={click_handler(result)}>
+						{result.name}
+					</a>
+				</li>
+				)})}
 			</ul>
 
-			{get_no_results_found()}
+			{ !state.results.length && typeof state.query === 'string' && !state.loading ?
+			<span className="info">No results found.</span>
+			: null}
 		</div>
 	)
 
@@ -26,41 +34,12 @@ function autocomplete_render(component) {
 
 	return template
 
-	function get_result_nodes() {
-		if(!state.results || !state.results.length) {
-			return []
+	function click_handler(result) {
+		return function(ev) {
+			ev.stopPropagation()
+			ev.preventDefault()
+
+			select_result(result)
 		}
-
-		return state.results.map(function(result) {
-			var clickHandler = function(ev) {
-				ev.stopPropagation()
-				ev.preventDefault()
-
-				select_result(result)
-			}
-
-			return (
-				<li key={result.id}>
-					<a href="#" onClick={clickHandler}>
-						{result.name}
-					</a>
-				</li>
-			)
-		})
-	}
-
-	function get_no_results_found() {
-		var no_results =
-			!state.results.length &&
-			typeof state.query === 'string' &&
-			!state.loading
-		
-		if(no_results) {
-			return (
-				<span className="info">No results found.</span>
-			)
-		}
-
-		return null
 	}
 }
