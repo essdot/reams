@@ -3,7 +3,7 @@ var dom = require('dom-sandbox')
 var through = require('through')
 
 var autocomplete = require('../lib/widgets/autocomplete')
-var click = require('../dom-utils/dom-click')
+var click = require('../lib/dom-utils/dom-click')
 
 test('loads initial state', function(t) {
 	var auto = autocomplete(dom(), through())
