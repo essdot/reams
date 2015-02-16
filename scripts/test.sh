@@ -5,5 +5,3 @@ if [ "$1" != "" ]; then
 else
     browserify test/*.test.js -t reactify -d | jsdom-eval
 fi
-
-
