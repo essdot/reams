@@ -6,6 +6,6 @@ React + front-end streams.
 
 ```
 npm i
-npm run build
+npm run bundle
 open www/index.html
 ```
