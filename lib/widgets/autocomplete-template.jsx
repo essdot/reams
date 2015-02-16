@@ -1,5 +1,5 @@
 var React = require('react')
-var toggle_class = require('../modules/toggle-class')
+var toggle_class = require('../../dom-utils/toggle-class')
 
 module.exports = autocomplete_render
 
