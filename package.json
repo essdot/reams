@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "sh scripts/test.sh",
-    "watch": "mkdir -p dist; watchify index.js -o dist/bundle.js -t reactify -d",
-    "bundle": "mkdir -p dist; browserify index.js -t reactify -o dist/bundle.js -d"
+    "watch": "mkdir -p dist; watchify index.js -o dist/bundle.js -d",
+    "bundle": "mkdir -p dist; browserify index.js -o dist/bundle.js -d"
   },
   "author": "",
   "license": "ISC",
@@ -15,12 +15,23 @@
     "dom-value-stream": "0.0.1",
     "objectstate": "^2.0.3",
     "react": "^0.12.2",
+    "react-templates": "^0.1.12",
     "through": "^2.3.6",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
+    "deamdify": "^0.1.1",
     "dom-sandbox": "0.0.1",
-    "tape": "^3.5.0",
-    "reactify": "^1.0.0"
+    "lodash": "^3.2.0",
+    "react-templatify": "0.0.2",
+    "reactify": "^1.0.0",
+    "tape": "^3.5.0"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "react-templatify",
+      "deamdify"
+    ]
   }
 }

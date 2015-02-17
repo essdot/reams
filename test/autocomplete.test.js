@@ -56,10 +56,11 @@ test('click selects item', function(t) {
 	var query_stream = through(write)
 	var auto = autocomplete(dom(), query_stream)
 
-	t.plan(2)
+	t.plan(3)
 
 	auto.write('abc')
 	t.equal(auto.component.state.results.length, 3)
+	t.equal(auto.parent_el.querySelectorAll('.autocomplete-results a').length, 3)
 
 	auto.on('data', function(data) {
 		t.deepEqual(data, {id: 3, name: 'Lady'})

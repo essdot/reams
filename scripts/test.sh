@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$1" != "" ]; then
-    browserify "$1" -t reactify -d | jsdom-eval
+    browserify "$1" -d | jsdom-eval
 else
-    browserify test/*.test.js -t reactify -d | jsdom-eval
+    browserify test/*.test.js -d | jsdom-eval
 fi
