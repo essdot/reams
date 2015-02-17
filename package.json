@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "sh scripts/test.sh",
-    "watch": "mkdir -p dist; watchify index.js -o dist/bundle.js -d",
+    "watch": "mkdir -p dist; watchify -t reactify -t react-templatify -t deamdify index.js -o dist/bundle.js -d",
     "bundle": "mkdir -p dist; browserify index.js -o dist/bundle.js -d"
   },
   "author": "",
@@ -24,12 +24,10 @@
     "dom-sandbox": "0.0.1",
     "lodash": "^3.2.0",
     "react-templatify": "0.0.2",
-    "reactify": "^1.0.0",
     "tape": "^3.5.0"
   },
   "browserify": {
     "transform": [
-      "reactify",
       "react-templatify",
       "deamdify"
     ]

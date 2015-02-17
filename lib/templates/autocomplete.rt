@@ -1,12 +1,12 @@
-<div className="autocomplete-content">
-	<input className="autocomplete-query" type="search" name="query"/>
-	<ul className="autocomplete-results">
+<div class="autocomplete-content">
+	<input class="autocomplete-query" type="search" name="query"/>
+	<ul class="autocomplete-results">
 		<li rt-repeat="result in this.state.results" key="{result.id}">
 			<a href="#" onClick="{this.select_result_handler(result)}">{result.name}</a>
 		</li>
 	</ul>
 
 	<div rt-if="!this.state.results.length && typeof this.state.query === 'string' && !this.state.loading">
-	<span className="info">No results found.</span>
+	<span class="info">No results found.</span>
 	</div>
 </div>
