@@ -14,7 +14,9 @@ window._auto = auto
 window._auto2 = auto2
 window._slider = slider
 // window._auto.on('data', function(data) { console.log(data) })
-window._slider.on('data', function(data) { console.log(data) })
+window._slider.on('data', function(data) { 
+	document.querySelector('.slider-display').innerHTML = '' + data
+})
 
 var React = require('react')
 var factory = React.createFactory()
