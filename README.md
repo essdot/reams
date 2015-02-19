@@ -114,7 +114,7 @@ own event listeners directly to React, with the `_react_options` argument.
 ### react-slider
 
 An `<input type="range">` for selecting number values.
-<hr/>
+
 `create_react_slider(parent_element, _initial) -> Stream`
 
 Returns a stream with a React component. Writing a number to the stream
@@ -132,7 +132,7 @@ Stream properties:
 ### autocomplete
 A widget with a text search box (`<input type="search">`) and results listed
 below.
-<hr/>
+
 `create_autocomplete(parent_element, query_stream) -> Stream`
 
 Returns a stream with a React component. Writing to the stream sends a query to
