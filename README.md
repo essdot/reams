@@ -12,7 +12,7 @@ logic.)
 This project uses `react-templatify` and `react-templates` to
 complile HTML templates into React. This is transparent to React, so
 nothing further is needed in order to start using HTML templates - just
-the transform and its dependencies. The HTML compiles into a render function you can pass around like any other.
+the transform and its dependencies. The HTML compiles into a render function you can require and pass like any other.
 
 This also includes reorienting the API around creating a single component.
 Just call a function, and arguments are simple - element and template; initial state if you need it; and pass whatever else directly to React if you need 
