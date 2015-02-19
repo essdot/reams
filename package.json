@@ -23,13 +23,12 @@
     "deamdify": "^0.1.1",
     "dom-sandbox": "0.0.1",
     "lodash": "^3.2.0",
-    "react-templatify": "0.0.2",
+    "react-templatify": "0.1.0",
     "tape": "^3.5.0"
   },
   "browserify": {
     "transform": [
-      "react-templatify",
-      "deamdify"
+      ["react-templatify", {"modules": "commonjs"}]
     ]
   }
 }
