@@ -98,7 +98,7 @@ Properties:
 `create_react_slider(parent_element, _initial) -> Stream`
 
 Returns a stream with a React component. Writing a number to the stream
-sets the value of the slider, and the stream outputs every time the value
+sets the value of the slider, and the stream emits every time the value
 changes.
 
 Arguments:
@@ -115,7 +115,7 @@ Text search box with results listed below.
 `create_autocomplete(parent_element, query_stream) -> Stream`
 
 Returns a stream with a React component. Writing to the stream sends a query to
-the query stream. The stream outputs an item when it is selected.
+the query stream. The stream emits an item when it is selected.
 
 Arguments:
 
