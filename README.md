@@ -106,8 +106,6 @@ You can use `stream.on` to listen for these events, or you can pass your
 own event listeners directly to React, with the `_react_options` argument. 
 
 
-==========
-
 
 ## Examples
 
