@@ -122,7 +122,7 @@ Arguments:
 - `parent_element`: Element for the React component to render into. If this
   element has any content it will be replaced by the slider.
 
-- `query_stream`: A stream that receives a query (string) and emits the 
+- `query_stream`: A stream that receives a query (a string) and emits the 
   results for the query (array of objects).
 
 ## demo
