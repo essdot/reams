@@ -24,9 +24,7 @@ that.
 ### react-component
 
 ```javascript
-create_react_component(
-	parent_element, template, _initial, _react_options
-) -> ReactComponent
+react_component(parent_el, template, _initial, _react_options) -> ReactComponent
 ```
 
 Simply repackages React's `render/createElement/CreateClass` dance.
@@ -36,7 +34,7 @@ This just simplifies that, but lets you pass whatever you want on to React.
 
 Arguments:
 
-- `parent_element`: Element for the React component to render into. If this
+- `parent_el`: Element for the React component to render into. If this
   element has any content it will be replaced by the template. This element is
   passed to `React.render`.
 
@@ -60,9 +58,7 @@ Methods:
 ### react-stream
 
 ```javascript
-create_react_stream(
-	parent_element, template, _initial, _react_options
-) -> Stream
+react_stream(parent_el, template, _initial, _react_options) -> Stream
 ```
 
 A `through` stream that wraps a React component. Writing to the stream calls
@@ -71,7 +67,7 @@ stream ends, it unrenders the component.
 
 Arguments:
 
-- `parent_element`: Element for the React component to render into. If this
+- `parent_el`: Element for the React component to render into. If this
   element has any content it will be replaced by the template. This element is
   passed to `React.render`.
 
@@ -113,14 +109,14 @@ own event listeners directly to React, with the `_react_options` argument.
 
 An `<input type="range">` for selecting number values.
 
-`create_react_slider(parent_element, _initial) -> Stream`
+`react_slider(parent_el, _initial) -> Stream`
 
 Returns a stream with a React component. Writing a number to the stream
 sets the value of the slider, and the stream emits every time the value
 changes.
 
 Arguments:
-- `parent_element`: Element for the React component to render into. If this
+- `parent_el`: Element for the React component to render into. If this
   element has any content it will be replaced by the slider.
 - `_initial`: Initial value for the slider (number). Optional, defaults to 0
 
@@ -131,14 +127,14 @@ Stream properties:
 A widget with a text search box (`<input type="search">`) and results listed
 below.
 
-`create_autocomplete(parent_element, query_stream) -> Stream`
+`autocomplete(parent_el, query_stream) -> Stream`
 
 Returns a stream with a React component. Writing to the stream sends a query to
 the query stream. The stream emits an item when it is selected.
 
 Arguments:
 
-- `parent_element`: Element for the React component to render into. If this
+- `parent_el`: Element for the React component to render into. If this
   element has any content it will be replaced by the slider.
 
 - `query_stream`: A stream that receives a query (a string) and emits the 
