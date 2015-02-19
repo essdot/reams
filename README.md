@@ -43,7 +43,7 @@ Properties:
 
 Methods:
 
-- `unrender()`: Calls `React.unmountComponentAtNode`.
+- `unrender()`: Calls `React.unmountComponentAtNode(parent_el)`.
 
 
 [React Component API doc](http://facebook.github.io/react/docs/component-api.html)
