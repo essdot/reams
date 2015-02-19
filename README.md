@@ -89,17 +89,17 @@ Events:
 
 The stream emits for the following lifecycle events on the component: 
 
-`componentDidMount -> function(component)`
+`componentDidMount(component)`
 
-`componentWillMount -> function(component)`
+`componentWillMount(component)`
 
-`componentWillUnmount -> function(component)`
+`componentWillUnmount(component)`
 
-`componentWillReceiveProps -> function(component, next_props)`
+`componentWillReceiveProps(component, next_props)`
 
-`componentWillUpdate -> function(component, next_props, next_state)`
+`componentWillUpdate(component, next_props, next_state)`
 
-`componentDidUpdate -> function(component, prev_props, prev_state)`
+`componentDidUpdate(component, prev_props, prev_state)`
 
 
 You can use `stream.on` to listen for these events, or you can pass your 
