@@ -18,6 +18,9 @@ This also includes reorienting the API around creating a single component.
 Just call a function, and arguments are simple - element and template; initial state if you need it; and pass whatever else directly to React if you need 
 that.
 
+Also, having `props` and `state` is weird. `state` should almost always be
+enough.
+
 
 ## React create functions
 
