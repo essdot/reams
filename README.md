@@ -69,10 +69,7 @@ A `through` stream that wraps a React component. Writing to the stream calls
 `setState` on the React component, and re-renders the component. When the 
 stream ends, it unrenders the component.
 
-The stream emits for the following lifecycle events on the component: 
-`componentDidMount`, `componentWillMount`, `componentWillUnmount`, `componentWillReceiveProps`, `componentWillUpdate`, `componentDidUpdate`. You
-can use `stream.on` to listen for those events, or you can pass your own 
-event listeners directly to React, with the `_react_options` argument. 
+Arguments:
 
 - `parent_element`: Element for the React component to render into. If this
   element has any content it will be replaced by the template. This element is
@@ -87,6 +84,26 @@ event listeners directly to React, with the `_react_options` argument.
 Properties:
 
 - `component`: The ReactComponent.
+
+Events: 
+
+The stream emits for the following lifecycle events on the component: 
+
+`componentDidMount -> function(component)`
+
+`componentWillMount -> function(component)`
+
+`componentWillUnmount -> function(component)`
+
+`componentWillReceiveProps -> function(component, next_props)`
+
+`componentWillUpdate -> function(component, next_props, next_state)`
+
+`componentDidUpdate -> function(component, prev_props, prev_state)`
+
+
+You can use `stream.on` to listen for these events, or you can pass your 
+own event listeners directly to React, with the `_react_options` argument. 
 
 
 ==========
