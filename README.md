@@ -12,6 +12,8 @@ This also includes reorienting the API around creating a single component. Just 
 
 Also, having `props` and `state` is weird. `state` should almost always be enough.
 
+Also, npm and Browserify work well as build tools for JavaScript.
+
 
 ## React create functions
 
@@ -21,7 +23,7 @@ Also, having `props` and `state` is weird. `state` should almost always be enoug
 react_component(parent_el, template, _initial, _react_options) -> ReactComponent
 ```
 
-Simply repackages React's `render/createElement/CreateClass` dance. Typically you create a `ReactClass`, then immediately call `React.createElement` with the class, then call `React.render` with an element. This just simplifies that, but lets you pass whatever you want on to React.
+Simply repackages React's `render/createElement/CreateClass` dance: Typically you create a `ReactClass`, then immediately call `React.createElement` with the class, then call `React.render` with an element. This just simplifies that, but lets you pass whatever you want on to React.
 
 Arguments:
 
