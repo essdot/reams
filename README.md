@@ -4,13 +4,13 @@ React + front-end streams.
 
 This project seeks to combine React with Node streams for creating web UIs. Streams are a nice abstraction for building web UIs -- input, output, and something happening in between. Streams are easy to combine, to achieve interesting functionality in your app. They all have the same interface.
 
-This project also seeks to repackage React's API to be more easily-consumed.This includes HTML templates: JSX is alright, but really the best way to describe HTML is in HTML. (Also, this implies templates separate from JS logic.)
+This is an opinionated project, which seeks to repackage React's API to be more easily-consumed.
 
-This project uses `react-templatify` and `react-templates` to compile HTML templates into React. This is transparent to React, so nothing further is needed in order to start using HTML templates - just the transform and its dependencies. The HTML compiles into a render function you can require and pass like any other.
+This includes HTML templates: JSX is alright, but really the best way to describe HTML is in HTML. HTML templates are used with React simply by including the `react-templatify` transform. The templates are compiled into a render function you can require and pass like any other.
 
 This also includes reorienting the API around creating a single component. Just call a function, and arguments are simple - element and template; initial state if you need it; and pass whatever else directly to React if you need that.
 
-Also, having `props` and `state` is weird. `state` should almost always be enough.
+Having `props` and `state` is weird -- `state` should almost always be enough. For the consumer of the API, `initial_state` should simply be an object, not a function that returns an object. (What's the point of that?)
 
 Also, npm and Browserify work well as build tools for JavaScript.
 
