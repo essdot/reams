@@ -9,6 +9,7 @@ test('component', function(t) {
 	
 	t.ok(component)
 	t.equal(el, component.parent_el)
+	t.equal(component.getDOMNode(), el.children[0])
 
 	component.unrender()
 	t.end()
