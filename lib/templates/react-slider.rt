@@ -1,7 +1,6 @@
 <input
 	type="range"
 	defaultValue="{this.state.value}"
-	value="{this.state.value}"
 	min="{this.props.min}"
 	max="{this.props.max}"
 	ref="input"
