@@ -101,7 +101,7 @@ Returns a stream with a React component. Writing a number to the stream sets the
 
 Arguments:
 - `parent_el`: Element for the React component to render into. If this element has any content it will be replaced by the slider.
-- `_initial`: Optional initial value for the slider (number). Optional, defaults to 0.
+- `_initial`: Optional initial value for the slider (number). Defaults to 0.
 - `_min`: Optional min for the slider (number). Defaults to 0.
 - `_max`: Optional max for the slider (number). Defaults to 100.
 
