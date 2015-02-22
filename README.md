@@ -74,10 +74,6 @@ Events:
 
 The stream emits for the following lifecycle events on the component: 
 
-`componentDidMount(component)`
-
-`componentWillMount(component)`
-
 `componentWillUnmount(component)`
 
 `componentWillReceiveProps(component, next_props)`
