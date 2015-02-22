@@ -95,13 +95,15 @@ You can use `stream.on` to listen for these events, or you can pass your own eve
 
 An `<input type="range">` for selecting number values.
 
-`react_slider(parent_el, _initial) -> Stream`
+`react_slider(parent_el, _initial, _min, _max) -> Stream`
 
 Returns a stream with a React component. Writing a number to the stream sets the value of the slider, and the stream emits every time the value changes.
 
 Arguments:
 - `parent_el`: Element for the React component to render into. If this element has any content it will be replaced by the slider.
 - `_initial`: Initial value for the slider (number). Optional, defaults to 0
+- `_min`: Optional min for the slider (number).
+- `_max`: Optional max for the slider (number).
 
 Stream properties:
 - `component`: React component

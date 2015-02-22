@@ -40,3 +40,12 @@ test('write queues value', function(t) {
 
 	slider.write(1.5)
 })
+
+test('initial, min & max', function(t) {
+	var slider = react_slider(dom(), 57, 2, 60)
+
+	t.equal(slider.component.state.value, 57)
+	t.equal(slider.component.props.min, 2)
+	t.equal(slider.component.props.max, 60)
+	t.end()
+})
