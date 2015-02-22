@@ -15,14 +15,15 @@ test('slider', function(t) {
 test('write sets value', function(t) {
 	var el = dom()
 	var slider = react_slider(el, 0)
-	
+
 	t.equal(slider.component.state.value, 0)
-	t.equal(slider.component.getDOMNode().value, '0')
+	t.equal(slider.component.refs.input.value, '0')
 
 	slider.write(1.5)
 
 	t.equal(slider.component.state.value, 1.5)
-	t.equal(slider.component.getDOMNode().value, '1.5')
+	t.equal(slider.component.refs.input.value, '1.5')
+
 	t.end()
 })
 
