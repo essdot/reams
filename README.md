@@ -6,7 +6,9 @@ This project seeks to combine React with Node streams for creating web UIs. Stre
 
 This is an opinionated project, which seeks to repackage React's API to be more easily-consumed.
 
-This includes HTML templates: JSX is alright, but really the best way to describe HTML is in HTML. HTML templates are used with React simply by including the `react-templatify` transform. (The templates are compiled into a render function you can require and pass like any other. You can put expressions in the template, and `ref="refName"` will put that element in the component's `refs` like you would expect.)
+This includes HTML templates: JSX is alright, but really the best way to describe HTML is in HTML. HTML templates are used with React simply by including the `react-templatify` transform.
+
+(The HTML is compiled into a render function, which you can require and pass like any other. You can put expressions in the template, and `ref="refName"` will add an element to the component's `refs` object like you would expect. [See more about refs here.](http://facebook.github.io/react/docs/more-about-refs.html))
 
 This also includes reorienting the API around creating a single component. Just call a function, and arguments are simple - element and template; initial state if you need it; and pass whatever else directly to React if you need that.
 
