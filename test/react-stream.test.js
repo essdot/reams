@@ -55,12 +55,12 @@ test('lifecycle events', function(t) {
 
 	t.plan(6)
 
-	rs.on('componentWillUpdate', function(component, next_props, next_state) {
+	rs.once('componentWillUpdate', function(component, next_props, next_state) {
 		t.equal(component.getDOMNode(), rs.component.getDOMNode())
 		t.deepEqual(next_state, write_value)
 	})
 
-	rs.on('componentDidUpdate', function(component, prev_props, prev_state) {
+	rs.once('componentDidUpdate', function(component, prev_props, prev_state) {
 		t.equal(component.getDOMNode(), rs.component.getDOMNode())
 		t.deepEqual(prev_state, {})
 		t.deepEqual(component.state, write_value)
