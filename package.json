@@ -20,7 +20,6 @@
     "xtend": "^4.0.0"
   },
   "devDependencies": {
-    "deamdify": "^0.1.1",
     "dom-sandbox": "0.0.1",
     "lodash": "^3.2.0",
     "react-templatify": "0.1.0",
