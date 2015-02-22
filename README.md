@@ -8,7 +8,7 @@ This is an opinionated project, which seeks to repackage React's API to be more 
 
 This includes HTML templates: JSX is alright, but really the best way to describe HTML is in HTML. HTML templates are used with React simply by including the `react-templatify` transform.
 
-(The HTML is compiled into a render function, which you can require and pass like any other. You can put expressions in the template, and `ref="refName"` will add an element to the component's `refs` object like you would expect. [Read more about refs here.](http://facebook.github.io/react/docs/more-about-refs.html))
+(The HTML is compiled into a React render function, which you can require and pass like any other. You can put expressions in the template, and `ref="refName"` will add an element to the component's `refs` object like you would expect. [Read more about refs here.](http://facebook.github.io/react/docs/more-about-refs.html))
 
 This also includes reorienting the API around creating a single component. Just call a function, and arguments are simple - pass in an element plus a template, get a component back. You can pass initial state if you need it, and pass whatever else directly to React if you need that.
 
