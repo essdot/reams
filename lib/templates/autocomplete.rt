@@ -1,5 +1,5 @@
 <div class="autocomplete-content">
-	<input class="autocomplete-query" type="search" name="query"/>
+	<input class="autocomplete-query" type="search" name="query" onChange="{this.handleChange}"/>
 	<ul class="autocomplete-results">
 		<li rt-repeat="result in this.state.results" key="{result.id}">
 			<a href="#" onClick="{this.select_result_handler(result)}">{result.name}</a>
