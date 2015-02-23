@@ -2,15 +2,15 @@
 
 React + front-end streams.
 
-This project seeks to combine React with Node streams for creating web UIs. Streams are a nice abstraction for building web UIs -- input, output, and something happening in between. Streams are easy to combine, to achieve interesting functionality in your app. They all have the same interface.
+This project seeks to combine React with Node streams for creating web UIs. Streams are a nice abstraction for building UIs -- input, output, and something happening in between. You worry about what happens when data comes in, and when it should go out, and the system worries about what functions should be called when. Streams are easy to combine, to achieve interesting functionality in your app. They all have the same interface.
 
 This is an opinionated project, which seeks to repackage React's API to be more easily-consumed.
 
-This includes HTML templates: JSX is alright, but really the best way to describe HTML is in HTML. HTML templates are used with React simply by including the `react-templatify` transform.
+This includes HTML templates: the best way to describe HTML is in HTML, not JSX. This implies templates separate from code. The React team has pulicly stated their belief that the markup and code for a component should live together, and I think that's a fine idea. Unfortunately, the syntax devised for this, JSX, is too clunky. Simple things like iterating over an array turn your `render` function into a mish-mash of code and faux-markup. The issue isn't the colocation of "markup" and code - the issue is that JSX is inexpressive and inelegant. HTML is much easier to read at a glance.
 
-(The HTML is compiled into a React render function, which you can require and pass like any other. You can put expressions in the template, and `ref="refName"` will add an element to the component's `refs` object like you would expect. [Read more about refs here.](http://facebook.github.io/react/docs/more-about-refs.html))
+In this project, HTML templates are used with React simply by including the `react-templatify` transform. The HTML is compiled into a React render function, which you can require and pass like any other. You can put `{}` expressions in the template, and `ref="refName"` will add an element to the component's `refs` object like you would expect. ([Read more about refs here.](http://facebook.github.io/react/docs/more-about-refs.html))
 
-This also includes reorienting the API around creating a single component. Just call a function, and arguments are simple - pass in an element plus a template, get a component back. You can pass initial state if you need it, and pass whatever else directly to React if you need that.
+This also includes reorienting the API around creating a single component. Just call a function, and arguments are simple - pass in an element plus a template, get a rendered component back. You can pass initial state if you need it, and pass whatever else directly to React if you need that.
 
 Having `props` and `state` is weird -- `state` should almost always be enough. For the consumer of the API, `initial_state` should simply be an object, not a function that returns an object. (What's the point of that?)
 
