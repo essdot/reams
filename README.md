@@ -14,7 +14,7 @@ This also includes reorienting the API around creating a single component. Just 
 
 Having `props` and `state` is weird -- `state` should almost always be enough. For the consumer of the API, `initial_state` should simply be an object, not a function that returns an object. (What's the point of that?)
 
-Also, npm and Browserify work well as build tools for JavaScript.
+Also, npm and Browserify work well as build tools for JavaScript. So let's use them!
 
 
 ## React create functions
