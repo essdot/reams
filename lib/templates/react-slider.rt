@@ -4,5 +4,5 @@
 	min="{this.props.min}"
 	max="{this.props.max}"
 	ref="input"
-	onChange="{this.handleInput}"
+	onChange="{this.handleChange}"
 />
