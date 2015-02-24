@@ -10,9 +10,7 @@ This includes HTML templates: the best way to describe HTML is in HTML, not JSX.
 
 In this project, HTML templates are used with React by including the `react-templatify` transform. This transform uses the `react-templates` project to compile the HTML into a React render function, which you can require and pass like any other. You can put `{}` expressions in the template just like JSX, and `ref="refName"` will add an element to the component's `refs` object like you would expect. ([Read more about `refs` here.](http://facebook.github.io/react/docs/more-about-refs.html))
 
-This also includes reorienting the API to make creating a single component simpler - just call a function!. And the arguments are simple - pass in an element plus a template, get a rendered component back. You can pass initial state if you need it, and pass whatever else directly to React if you need that.
-
-Having `props` and `state` is weird -- `state` should almost always be enough. For the consumer of the API, `initial_state` should simply be an object, not a function that returns an object. (What's the point of that?)
+This also includes reorienting the API to make creating a single component simpler - just call one function. And the arguments are simple - pass in an element plus a template, get a rendered component back. You can pass initial state if you need it, and pass whatever else directly to React if you need that.
 
 Also, npm and Browserify work well as build tools for JavaScript. So let's use them!
 
