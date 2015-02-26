@@ -25,7 +25,7 @@ react_component(parent_el, template, _initial, _react_options) -> ReactComponent
 
 Returns a React component object. Simply repackages React's `render/createElement/CreateClass` dance: Typically you create a `ReactClass`, then pass the class to `React.createElement`, then pass the ReactElement to `React.render` with a DOM element. This API simplifies that process, but you can still pass whatever you want on to React.
 
-Arguments:
+#### Arguments:
 
 - `parent_el`: Element for the React component to render into. If this
   element has any content it will be replaced by the template. This element is
@@ -37,16 +37,18 @@ Arguments:
 
 - `_react_options`: Any additional options to pass to `React.createClass`
 
-Properties:
+#### Properties:
 
-- `parent_el`: The parent element above
+- `parent_el`: The parent element passed to the create function
 
-Methods:
+#### Methods:
 
 - `unrender()`: Calls `React.unmountComponentAtNode(parent_el)`.
 
 
 [React Component API doc](http://facebook.github.io/react/docs/component-api.html)
+
+----
 
 ### react-stream
 
@@ -56,7 +58,7 @@ react_stream(parent_el, template, _initial, _react_options) -> Stream
 
 A `through` stream that wraps a React component. Writing to the stream calls `setState` on the React component, and re-renders the component. When the stream ends, it unrenders the component.
 
-Arguments:
+#### Arguments:
 
 - `parent_el`: Element for the React component to render into. If this element has any content it will be replaced by the template. This element is passed to `React.render`.
 
@@ -66,11 +68,11 @@ Arguments:
 
 - `_react_options`: Any additional options to pass to `React.createClass`
 
-Properties:
+#### Properties:
 
 - `component`: The ReactComponent.
 
-Events: 
+#### Events: 
 
 The stream emits events for the following React lifecycle events on the component:
 
@@ -84,7 +86,6 @@ The stream emits events for the following React lifecycle events on the componen
 
 
 You can use `stream.on` to listen for these events, or you can pass your own event listeners directly to React, with the `_react_options` argument. For any event handlers you pass directly to React, the stream will not emit events. (e.g., if you pass a `componentDidUpdate` function to React, the stream will not emit `componentDidUpdate` events.)
-
 
 
 ## Examples included in this repo
