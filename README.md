@@ -23,7 +23,7 @@ Also, npm and Browserify work well as build tools for JavaScript. So let's use t
 react_component(parent_el, template, _initial, _react_options) -> ReactComponent
 ```
 
-Returns a React component object. Simply repackages React's `render/createElement/CreateClass` dance: Typically you create a `ReactClass`, then pass the class to `React.createElement`, then pass the ReactElement to `React.render` with a DOM element. This API simplifies that process, but you can still pass whatever you want on to React.
+Returns a React component object. Simply repackages React's `render`/`createElement`/`createClass` dance: Typically you create a class with `React.createClass`, then pass the class to `React.createElement`, then pass the ReactElement to `React.render` with a DOM element to finally get a React component. This API simplifies that process - call one function and get a component back. But you can still pass whatever options you want directly to React.
 
 #### Arguments:
 
