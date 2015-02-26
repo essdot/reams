@@ -72,22 +72,22 @@ Properties:
 
 Events: 
 
-The stream emits for the following lifecycle events on the component: 
+The stream emits events for the following React lifecycle events on the component:
 
-`componentWillUnmount(component)`
+- Event: `componentWillUnmount` Argument: `component`
 
-`componentWillReceiveProps(component, next_props)`
+- Event: `componentWillReceiveProps` Arguments: `component, next_props`
 
-`componentWillUpdate(component, next_props, next_state)`
+- Event: `componentWillUpdate` Arguments: `component, next_props, next_state`
 
-`componentDidUpdate(component, prev_props, prev_state)`
-
-
-You can use `stream.on` to listen for these events, or you can pass your own event listeners directly to React, with the `_react_options` argument. 
+- Event: `componentDidUpdate` Arguments: `component, prev_props, prev_state`
 
 
+You can use `stream.on` to listen for these events, or you can pass your own event listeners directly to React, with the `_react_options` argument. For any event handlers you pass directly to React, the stream will not emit events. (e.g., if you pass a `componentDidUpdate` function to React, the stream will not emit `componentDidUpdate` events.)
 
-## Examples
+
+
+## Examples included in this repo
 
 ### react-slider
 
