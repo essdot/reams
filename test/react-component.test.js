@@ -29,6 +29,7 @@ test('component passes react args', function(t) {
 		dom(),
 		render_stub,
 		{hello: true},
+		null,
 		{
 			getInitialState: function() {
 				return {goodbye: true}

@@ -20,7 +20,7 @@ Also, npm and Browserify work well as build tools for JavaScript. So let's use t
 ### react-component
 
 ```javascript
-react_component(parent_el, template, _initial, _react_options) -> ReactComponent
+react_component(parent_el, template, _initial, _props, _extra) -> ReactComponent
 ```
 
 Returns a React component object. Simply repackages React's `render`/`createElement`/`createClass` dance: Typically you create a class with `React.createClass`, then pass the class to `React.createElement`, then pass the ReactElement to `React.render` with a DOM element to finally get a React component. This API simplifies that process - call one function and get a component back. But you can still pass whatever options you want directly to React.
@@ -35,7 +35,9 @@ Returns a React component object. Simply repackages React's `render`/`createElem
 
 - `_initial`: Initial state object, optional
 
-- `_react_options`: Any additional options to pass to `React.createClass`
+- `_props`: Any default props, optional
+
+- `_extra`: Any additional options to pass to `React.createClass`
 
 #### Properties:
 
@@ -53,7 +55,7 @@ Returns a React component object. Simply repackages React's `render`/`createElem
 ### react-stream
 
 ```javascript
-react_stream(parent_el, template, _initial, _react_options) -> Stream
+react_stream(parent_el, template, _initial, _props, _extra) -> Stream
 ```
 
 A `through` stream that wraps a React component. Writing to the stream calls `setState` on the React component, and re-renders the component. When the stream ends, it unrenders the component.
@@ -66,7 +68,9 @@ A `through` stream that wraps a React component. Writing to the stream calls `se
 
 - `_initial`: Initial state object, optional
 
-- `_react_options`: Any additional options to pass to `React.createClass`
+- `_props`: Any default props, optional
+
+- `_extra`: Any additional options to pass to `React.createClass`
 
 #### Properties:
 
