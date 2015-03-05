@@ -17,13 +17,23 @@ test('react factory returns react component', function(t) {
 })
 
 test('passes React options', function(t) {
-	var factory = react_factory(render, {}, {
+	var factory = react_factory(render, null, null, {
 		pizza: function() {}
 	})
 
-	t.ok(typeof factory(dom()).pizza === 'function')
+	t.equal(typeof factory(dom()).pizza, 'function')
 	t.end()
 })
+
+test('passes props', function(t) {
+	var factory = react_factory(render, null, {
+		pizza: function() {}
+	})
+
+	t.equal(typeof factory(dom()).props.pizza, 'function')
+	t.end()
+})
+
 
 test('initial state', function(t) {
 	var factory = react_factory(render, {nachos: true})
