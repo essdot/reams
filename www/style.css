@@ -1,6 +1,13 @@
 @import 'onion-skin.css';
 @import 'drag-mirror.css';
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .loading {
 	background: #FFFFF0;
 }
