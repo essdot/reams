@@ -1,0 +1,60 @@
+.drag-mirror-contents {
+	position: relative;
+}
+
+.drag-mirror-contents .drag-mirror-line {
+	background: #000;
+	border-left: 1px solid rgb(170, 193, 200);
+	border-right: 1px solid rgb(170, 193, 200);
+	cursor: ew-resize;
+	height: 100%;
+	margin: 0;
+	position: absolute;
+	width: 3px;
+	z-index: 15;
+}
+
+.drag-mirror-contents .drag-mirror-image {
+	vertical-align: top;
+	pointer-events: none;
+}
+
+.drag-mirror-contents .drag-mirror-bottom {
+	position: relative;
+	z-index: 5;
+
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+	filter: FlipH;
+}
+
+.drag-mirror-contents .drag-mirror-top {
+}
+
+.drag-mirror-contents .drag-mirror-top-wrapper {
+	z-index: 10;
+	margin: 0;
+	overflow-x: hidden;
+	padding: 0;
+	position: absolute;
+}
+
+.dragging {
+	box-shadow: 0px 0px 4px #aaa;
+}
+
+.drag-mirror-info-section {
+	display: inline-block;
+	width: 25%;
+}
+
+.drag-mirror-top-info {
+	float: left;
+}
+
+.drag-mirror-bottom-info {
+	float: right;
+	text-align: right;
+}

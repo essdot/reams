@@ -1,0 +1,36 @@
+.onion-skin-wrapper {
+	margin-top: 50px;
+}
+
+.onion-skin-compare-contents {
+	position: relative;
+}
+
+.onion-skin-compare-contents .onion-skin-compare-bottom-wrapper {
+	z-index: 5;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.onion-skin-compare-contents .onion-skin-compare-top-wrapper {
+	position: relative;
+	z-index: 10;
+}
+
+.onion-skin-compare-contents .onion-skin-compare-bottom-image {
+	-moz-transform: scale(-1, 1);
+	-webkit-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+	filter: FlipH;
+}
+
+.onion-skin-compare-contents .onion-skin-info,
+.onion-skin-compare-contents .slider-wrapper {
+	text-align: center;
+}
+
+.onion-skin-compare-contents .slider-wrapper input {
+	width: 65%;
+}

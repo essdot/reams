@@ -1,3 +1,6 @@
+@import 'onion-skin.css';
+@import 'drag-mirror.css';
+
 .loading {
 	background: #FFFFF0;
 }
@@ -15,102 +18,4 @@
 	background: lightblue;
 	border: 1px solid darkblue;
 	border-radius: 20px;
-}
-
-.drag-mirror-contents {
-	position: relative;
-}
-
-.drag-mirror-contents .drag-mirror-line {
-	background: #000;
-	border-left: 1px solid rgb(170, 193, 200);
-	border-right: 1px solid rgb(170, 193, 200);
-	cursor: ew-resize;
-	height: 100%;
-	margin: 0;
-	position: absolute;
-	width: 3px;
-	z-index: 15;
-}
-
-.drag-mirror-contents .drag-mirror-image {
-	vertical-align: top;
-	pointer-events: none;
-}
-
-.drag-mirror-contents .drag-mirror-bottom {
-	position: relative;
-	z-index: 5;
-
-	-moz-transform: scale(-1, 1);
-	-webkit-transform: scale(-1, 1);
-	-o-transform: scale(-1, 1);
-	transform: scale(-1, 1);
-	filter: FlipH;
-}
-
-.drag-mirror-contents .drag-mirror-top {
-}
-
-.drag-mirror-contents .drag-mirror-top-wrapper {
-	z-index: 10;
-	margin: 0;
-	overflow-x: hidden;
-	padding: 0;
-	position: absolute;
-}
-
-.dragging {
-	box-shadow: 0px 0px 4px #aaa;
-}
-
-.drag-mirror-info-section {
-	display: inline-block;
-	width: 25%;
-}
-
-.drag-mirror-top-info {
-	float: left;
-}
-
-.drag-mirror-bottom-info {
-	float: right;
-	text-align: right;
-}
-
-.onion-skin-wrapper {
-	margin-top: 50px;
-}
-
-.onion-skin-compare-contents {
-	position: relative;
-}
-
-.onion-skin-compare-contents .onion-skin-compare-bottom-wrapper {
-	z-index: 5;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.onion-skin-compare-contents .onion-skin-compare-top-wrapper {
-	position: relative;
-	z-index: 10;
-}
-
-.onion-skin-compare-contents .onion-skin-compare-bottom-image {
-	-moz-transform: scale(-1, 1);
-	-webkit-transform: scale(-1, 1);
-	-o-transform: scale(-1, 1);
-	transform: scale(-1, 1);
-	filter: FlipH;
-}
-
-.onion-skin-compare-contents .onion-skin-info,
-.onion-skin-compare-contents .slider-wrapper {
-	text-align: center;
-}
-
-.onion-skin-compare-contents .slider-wrapper input {
-	width: 65%;
 }
