@@ -5,12 +5,9 @@ var drag_mirror = require('../lib/widgets/drag-mirror')
 
 function create_mirror() {
 	var el = dom('<div class="drag-mirror-wrapper"></div>')
-	var fake_img = dom('<img src="../www/img.jpg" />')
-	var mirror = drag_mirror(el, '../www/img.jpg')
-
-	fake_img.offsetWidth = 750
-
-	mirror.on_image_load({target: fake_img})
+	var mirror = drag_mirror(el, 'img1.png', 'img2.png')
+	mirror.get_image_dimensions = function() { return {height: 400, width: 750}}
+	mirror.ready()
 
 	return mirror
 }
@@ -19,7 +16,7 @@ test('drag mirror', function(t) {
 	var mirror = create_mirror()
 
 	t.equal(mirror.state.percent, .5)
-	t.equal(mirror.props.img_width, 750)
+	t.deepEqual(mirror.props.dimensions, {height: 400, width: 750})
 	t.equal(mirror.props.line.el.style.left, '375px')
 	t.end()
 })
