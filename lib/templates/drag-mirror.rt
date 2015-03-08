@@ -1,0 +1,19 @@
+<div class="drag-mirror-contents" style="width: {this.props.img_width}px">
+	<hr class="drag-mirror-line"/>
+	<div class="drag-mirror-top-wrapper" style="width: {this.getPercentString()}%">
+		<img class="drag-mirror-top drag-mirror-image" src="{this.props.image_url}">
+	</div>
+	<img
+		class="drag-mirror-bottom drag-mirror-image"
+		src="{this.props.image_url}"
+		onLoad={this.onImageLoad}>
+
+	<div class="drag-mirror-info">
+		<section class="drag-mirror-info-section drag-mirror-top-info">
+			{this.getTopPercent()}%
+		</section>
+		<section class="drag-mirror-info-section drag-mirror-bottom-info">
+			{this.getBottomPercent()}%
+		</section>
+	</div>
+</div>
