@@ -1,4 +1,4 @@
-.drag-mirror-contents {
+.swipe-compare-contents {
 	position: relative;
 
 	-moz-user-select: none;
@@ -6,7 +6,7 @@
 	-ms-user-select: none;
 }
 
-.drag-mirror-contents .drag-mirror-line {
+.swipe-compare-contents .swipe-compare-line {
 	background: #000;
 	border: none;
 	border-left: 1px solid rgb(170, 193, 200);
@@ -19,20 +19,20 @@
 	z-index: 15;
 }
 
-.drag-mirror-contents .drag-mirror-image {
+.swipe-compare-contents .swipe-compare-image {
 	vertical-align: top;
 	pointer-events: none;
 }
 
-.drag-mirror-contents .drag-mirror-bottom {
+.swipe-compare-contents .swipe-compare-bottom {
 	position: relative;
 	z-index: 5;
 }
 
-.drag-mirror-contents .drag-mirror-top {
+.swipe-compare-contents .swipe-compare-top {
 }
 
-.drag-mirror-contents .drag-mirror-top-wrapper {
+.swipe-compare-contents .swipe-compare-top-wrapper {
 	z-index: 10;
 	margin: 0;
 	overflow-x: hidden;
@@ -44,16 +44,16 @@
 	box-shadow: 0px 0px 4px #aaa;
 }
 
-.drag-mirror-info-section {
+.swipe-compare-info-section {
 	display: inline-block;
 	width: 25%;
 }
 
-.drag-mirror-top-info {
+.swipe-compare-top-info {
 	float: left;
 }
 
-.drag-mirror-bottom-info {
+.swipe-compare-bottom-info {
 	float: right;
 	text-align: right;
 }

@@ -1,0 +1,22 @@
+<div class="swipe-compare-contents" style="width: {this.props.dimensions.width}px">
+	<hr class="swipe-compare-line"/>
+	<div class="swipe-compare-top-wrapper" style="width: {this.state.big_percent.toFixed(2)}%">
+		<img
+			class="swipe-compare-top swipe-compare-image"
+			src="{this.props.image_1}"
+			onLoad={this.image_load_handler(1)} />
+	</div>
+	<img
+		class="swipe-compare-bottom swipe-compare-image"
+		src="{this.props.image_2}"
+		onLoad={this.image_load_handler(2)} />
+
+	<div class="swipe-compare-info">
+		<section class="swipe-compare-info-section swipe-compare-top-info">
+			{this.state.percent_string}
+		</section>
+		<section class="swipe-compare-info-section swipe-compare-bottom-info">
+			{this.state.reverse_percent_string}
+		</section>
+	</div>
+</div>
