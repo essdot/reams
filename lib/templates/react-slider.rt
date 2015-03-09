@@ -3,5 +3,6 @@
 	defaultValue="{this.state.value}"
 	min="{this.props.min}"
 	max="{this.props.max}"
+	step="{this.props.max / 100}"
 	onChange="{this.handleChange}"
 />
