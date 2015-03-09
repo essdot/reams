@@ -17,7 +17,6 @@ test('swipe compare', function(t) {
 
 	t.equal(swiper.state.percent, .5)
 	t.deepEqual(swiper.props.dimensions, {height: 400, width: 750})
-	t.equal(swiper.props.line.el.style.left, '375px')
 	t.end()
 })
 
@@ -29,5 +28,7 @@ test('calculates percentages correctly', function(t) {
 	t.equal(swiper.state.percent, .3)
 	t.equal(swiper.state.big_percent, 30)
 	t.equal(swiper.state.reverse_big_percent, 70)
+	t.equal(swiper.state.percent_string, '30%')
+	t.equal(swiper.state.reverse_percent_string, '70%')
 	t.end()
 })
