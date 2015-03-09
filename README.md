@@ -111,6 +111,7 @@ Arguments:
 Stream properties:
 - `component`: React component
 
+
 ### autocomplete
 A widget with a text search box (`<input type="search">`) and results listed below.
 
@@ -123,6 +124,24 @@ Arguments:
 - `parent_el`: Element for the React component to render into. If this element has any content it will be replaced by the slider.
 
 - `query_stream`: A stream that receives a query (a string) and emits the results for the query (array of objects).
+
+
+### swipe-compare
+
+A widget that lets you compare/diff two images by swiping horizontally. The images are layered on top of one another.
+
+`swipe_compare(parent_el, image_1, image_2) -> Component`
+
+Arguments:
+
+- `parent_el`: Element for the widget to render into. If this element has any content it will be replaced by the swiper.
+
+- `image_1`: The URL for the left (or top) image.
+- `image_2`: The URL for the right (or bottom) image.
+
+Methods:
+
+- `set_percent(new_percent)`: Sets the percentage from 0 - 1. 0 means all bottom/right image, 1 means all top/left image.
 
 ## demo
 
