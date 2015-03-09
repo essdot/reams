@@ -146,7 +146,7 @@ Arguments:
 
 Methods:
 
-- `set_percent(new_percent)`: Sets the percentage from 0 - 1. 0 means all bottom/right image, 1 means all top/left image.
+- `set_percent(number new_percent)`: Sets the percentage from 0 - 1. 0 means all bottom/right image, 1 means all top/left image.
 
 ----
 
