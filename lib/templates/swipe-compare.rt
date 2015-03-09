@@ -1,4 +1,4 @@
-<div class="swipe-compare-contents" style="width: {this.props.dimensions.width}px">
+<div class="swipe-compare-contents" style="width: {this.props.dimensions.width}px" onMouseMove={this.mousemove_handler}>
 	<hr class="swipe-compare-line" style="left: {this.state.big_percent.toFixed(2)}%"/>
 	<div class="swipe-compare-top-wrapper" style="width: {this.state.big_percent.toFixed(2)}%">
 		<img
