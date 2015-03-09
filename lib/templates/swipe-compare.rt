@@ -4,12 +4,12 @@
 		<img
 			class="swipe-compare-top swipe-compare-image"
 			src="{this.props.image_1}"
-			onLoad={this.image_load_handler(1)} />
+			onLoad={this.image_load_handler} />
 	</div>
 	<img
 		class="swipe-compare-bottom swipe-compare-image"
 		src="{this.props.image_2}"
-		onLoad={this.image_load_handler(2)} />
+		onLoad={this.image_load_handler} />
 
 	<div class="swipe-compare-info">
 		<section class="swipe-compare-info-section swipe-compare-top-info">
