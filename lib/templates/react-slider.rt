@@ -3,6 +3,5 @@
 	defaultValue="{this.state.value}"
 	min="{this.props.min}"
 	max="{this.props.max}"
-	ref="input"
 	onChange="{this.handleChange}"
 />
