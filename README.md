@@ -140,9 +140,9 @@ Arguments:
 
 - `parent_el`: element - Element for the widget to render into. If this element has any content it will be replaced by the swiper.
 
-- `image_1`: string - The URL for the left (or top) image.
+- `image_1`: string - The URL for the left (or top) image. Can be a data URI.
 
-- `image_2`: string - The URL for the right (or bottom) image.
+- `image_2`: string - The URL for the right (or bottom) image. Can be a data URI.
 
 Methods:
 
@@ -160,9 +160,9 @@ Arguments:
 
 - `parent_el`: element - Element for the widget to render into. If this element has any content it will be replaced by the swiper.
 
-- `image_1`: string - The URL for the top image.
+- `image_1`: string - The URL for the top image. Can be a data URI.
 
-- `image_2`: string - The URL for the bottom image.
+- `image_2`: string - The URL for the bottom image. Can be a data URI.
 
 Methods:
 
