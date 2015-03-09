@@ -1,15 +1,10 @@
-<div class="onion-skin-compare-contents" style="width: {this.props.image_width}px">
-	<div class="onion-skin-compare-top-wrapper" style="opacity: {this.get_top_percent()}">
-		<img class="onion-skin-compare-top-image" src="{this.props.img_1}" />
+<div class="onion-skin-compare-contents">
+	<div class="onion-skin-compare-top-wrapper" style="opacity: {this.state.percent.toFixed(2)}">
+		<img class="onion-skin-compare-top-image" src="{this.props.image_1}" />
 	</div>
 	<div class="onion-skin-compare-bottom-wrapper">
-		<img
-			class="onion-skin-compare-bottom-image"
-			src="{this.props.img_2}"
-			onLoad={this.onImageLoad} />
+		<img class="onion-skin-compare-bottom-image" src="{this.props.image_2}" />
 	</div>
 	<div class="slider-wrapper"></div>
-	<div class="onion-skin-info">
-		{this.get_percent()}%
-	</div>
+	<div class="onion-skin-info">{this.state.percent_string}</div>
 </div>
