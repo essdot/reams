@@ -103,14 +103,17 @@ An `<input type="range">` for selecting number values.
 Returns a stream with a React component. Writing a number to the stream sets the value of the slider, and the stream emits every time the value changes.
 
 Arguments:
-- `parent_el`: Element for the React component to render into. If this element has any content it will be replaced by the slider.
-- `_initial`: Optional initial value for the slider (number). Defaults to 0.
-- `_min`: Optional min for the slider (number). Defaults to 0.
-- `_max`: Optional max for the slider (number). Defaults to 100.
+
+- `parent_el`: element - Element for the React component to render into. If this element has any content it will be replaced by the slider.
+- `_initial`: number - Optional initial value for the slider. Defaults to 0.
+- `_min`: number - Optional min for the slider. Defaults to 0.
+- `_max`: number - Optional max for the slider. Defaults to 100.
 
 Stream properties:
+
 - `component`: React component
 
+----
 
 ### autocomplete
 A widget with a text search box (`<input type="search">`) and results listed below.
@@ -121,10 +124,11 @@ Returns a stream with a React component. Writing to the stream sends a query to 
 
 Arguments:
 
-- `parent_el`: Element for the React component to render into. If this element has any content it will be replaced by the slider.
+- `parent_el`: element - Element for the React component to render into. If this element has any content it will be replaced by the slider.
 
-- `query_stream`: A stream that receives a query (a string) and emits the results for the query (array of objects).
+- `query_stream`: stream - A stream that receives a query (a string) and emits the results for the query (array of objects).
 
+----
 
 ### swipe-compare
 
@@ -134,14 +138,36 @@ A widget that lets you compare/diff two images by swiping horizontally. The imag
 
 Arguments:
 
-- `parent_el`: Element for the widget to render into. If this element has any content it will be replaced by the swiper.
+- `parent_el`: element - Element for the widget to render into. If this element has any content it will be replaced by the swiper.
 
-- `image_1`: The URL for the left (or top) image.
-- `image_2`: The URL for the right (or bottom) image.
+- `image_1`: string - The URL for the left (or top) image.
+
+- `image_2`: string - The URL for the right (or bottom) image.
 
 Methods:
 
 - `set_percent(new_percent)`: Sets the percentage from 0 - 1. 0 means all bottom/right image, 1 means all top/left image.
+
+----
+
+### onion-skin compare
+
+A widget that lets you compare/diff two images via opacity. The images are layered on top of one another, and a slider controls the opacity of the top image.
+
+`onion_skin_compare(parent_el, image_1, image_2) -> Component`
+
+Arguments:
+
+- `parent_el`: element - Element for the widget to render into. If this element has any content it will be replaced by the swiper.
+
+- `image_1`: string - The URL for the top image.
+
+- `image_2`: string - The URL for the bottom image.
+
+Methods:
+
+- `set_percent(new_percent)`: Sets the percentage from 0 - 1. 0 means all bottom image, 1 means all top image.
+
 
 ## demo
 
