@@ -19,27 +19,49 @@ test('onion skin', function(t) {
 test('writing to slider sets percent', function(t) {
   var el = dom('<div class="onion-skin-wrapper"></div>')
   var compare = onion_skin(el, 'img/img1.png', 'img/img2.png')
+  var slider = compare.component.props.slider
 
-  t.equal(compare.state.percent, .5)
-  t.equal(compare.props.slider.component.state.value, .5)
+  t.plan(3)
 
-  compare.props.slider.write(.7)
-  t.equal(compare.state.percent, .7)
-  t.equal(compare.props.slider.component.state.value, .7)
+  t.equal(compare.component.state.percent, .5)
+  t.equal(slider.component.state.value, .5)
 
-  t.end()
+  compare.on('data', function(data) {
+    t.equal(data, .7)
+  })
+
+  slider.write(.7)
+
+  compare.on('end', function(data) {
+    t.end()
+  })
+
+  compare.end()
 })
 
-test('set_percent updates slider', function(t) {
+test('write sets percent', function(t) {
   var el = dom('<div class="onion-skin-wrapper"></div>')
   var compare = onion_skin(el, 'img/img1.png', 'img/img2.png')
+  var slider = compare.component.props.slider
 
-  t.equal(compare.state.percent, .5)
-  t.equal(compare.props.slider.component.state.value, .5)
+  t.plan(4)
 
-  compare.set_percent(.7)
-  t.equal(compare.state.percent, .7)
-  t.equal(compare.props.slider.component.state.value, .7)
+  t.equal(compare.component.state.percent, .5)
+  t.equal(slider.component.state.value, .5)
 
-  t.end()
+  slider.on('data', function(data){
+    t.equal(data, .7)
+  })
+
+  compare.on('data', function(data) {
+    t.equal(data, .7)
+  })
+
+  compare.write(.7)
+
+  compare.on('end', function(data) {
+    t.end()
+  })
+
+  compare.end()
 })
