@@ -116,6 +116,7 @@ Stream properties:
 ----
 
 ### autocomplete
+
 A widget with a text search box (`<input type="search">`) and results listed below.
 
 `autocomplete(parent_el, query_stream) -> Stream`
@@ -132,9 +133,11 @@ Arguments:
 
 ### swipe-compare
 
+`swipe_compare(parent_el, image_1, image_2) -> Stream`
+
 A widget that lets you compare/diff two images by swiping horizontally. The images are layered on top of one another.
 
-`swipe_compare(parent_el, image_1, image_2) -> Component`
+Writing to the stream with a number between 0 and 1 sets the left/right percentage. 0 means all right/bottom image, 1 means all left/top image.
 
 Arguments:
 
@@ -144,17 +147,15 @@ Arguments:
 
 - `image_2`: string - The URL for the right (or bottom) image. Can be a data URI.
 
-Methods:
-
-- `set_percent(number new_percent)`: Sets the percentage from 0 - 1. 0 means all bottom/right image, 1 means all top/left image.
-
 ----
 
 ### onion-skin compare
 
+`onion_skin_compare(parent_el, image_1, image_2) -> Stream`
+
 A widget that lets you compare/diff two images via opacity. The images are layered on top of one another, and a slider controls the opacity of the top image.
 
-`onion_skin_compare(parent_el, image_1, image_2) -> Component`
+Writing to the stream with a number between 0 and 1 sets the top/bottom percentage. 0 means all bottom image, 1 means all top image.
 
 Arguments:
 
@@ -163,11 +164,6 @@ Arguments:
 - `image_1`: string - The URL for the top image. Can be a data URI.
 
 - `image_2`: string - The URL for the bottom image. Can be a data URI.
-
-Methods:
-
-- `set_percent(new_percent)`: Sets the percentage from 0 - 1. 0 means all bottom image, 1 means all top image.
-
 
 ## demo
 
