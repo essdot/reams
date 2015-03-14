@@ -21,18 +21,19 @@ test('writing to slider sets percent', function(t) {
   var compare = onion_skin(el, 'img/img1.png', 'img/img2.png')
   var slider = compare.component.props.slider
 
-  t.plan(3)
+  t.plan(4)
 
   t.equal(compare.component.state.percent, .5)
   t.equal(slider.component.state.value, .5)
 
   compare.on('data', function(data) {
     t.equal(data, .7)
+    t.equal(slider.component.state.value, .7)
   })
 
   slider.write(.7)
 
-  compare.on('end', function(data) {
+  compare.on('end', function() {
     t.end()
   })
 
