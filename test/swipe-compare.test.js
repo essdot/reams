@@ -6,7 +6,10 @@ var swipe_compare = require('../lib/widgets/swipe-compare')
 function create_swiper() {
 	var el = dom('<div class="swiper-wrapper"></div>')
 	var swiper = swipe_compare(el, 'img1.png', 'img2.png')
-	swiper.component.get_image_dimensions = function() { return {height: 400, width: 750}}
+
+	swiper.component.get_image_dimensions = function() {
+		return {height: 400, width: 750}
+	}
 	swiper.component.images_loaded()
 
 	return swiper
