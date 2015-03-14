@@ -155,7 +155,7 @@ A widget that lets you compare/diff two images via opacity. The images are layer
 
 `onion_skin_compare(parent_el, image_1, image_2) -> Stream`
 
-Returns a stream wrapping a react component. Writing to the stream with a number between 0 and 1 sets the top/bottom percentage. 0 means all bottom image, 1 means all top image. The stream also emits when the percentage changes.
+Returns a stream wrapping a React component. Writing to the stream with a number between 0 and 1 sets the top/bottom percentage. 0 means all bottom image, 1 means all top image. The stream also emits when the percentage changes.
 
 Arguments:
 
