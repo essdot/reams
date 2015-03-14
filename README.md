@@ -100,7 +100,7 @@ An `<input type="range">` for selecting number values.
 
 `react_slider(parent_el, _initial, _min, _max) -> Stream`
 
-Returns a stream with a React component. Writing a number to the stream sets the value of the slider, and the stream emits every time the value changes.
+Returns a stream that wraps a React component. Writing a number to the stream sets the value of the slider, and the stream emits every time the value changes.
 
 Arguments:
 
@@ -121,23 +121,23 @@ A widget with a text search box (`<input type="search">`) and results listed bel
 
 `autocomplete(parent_el, query_stream) -> Stream`
 
-Returns a stream with a React component. Writing to the stream sends a query to the query stream. The stream emits an item when it is selected.
+Returns a stream that wraps a React component. Writing to the stream sends a query to the query stream. The stream emits an item when it is selected.
 
 Arguments:
 
 - `parent_el`: element - Element for the React component to render into. If this element has any content it will be replaced by the slider.
 
-- `query_stream`: stream - A stream that receives a query (a string) and emits the results for the query (array of objects).
+- `query_stream`: stream - A readable/writable stream that receives a query (a string) and emits the results for the query (array of objects).
 
 ----
 
 ### swipe-compare
 
-`swipe_compare(parent_el, image_1, image_2) -> Stream`
-
 A widget that lets you compare/diff two images by swiping horizontally. The images are layered on top of one another.
 
-Writing to the stream with a number between 0 and 1 sets the left/right percentage. 0 means all right/bottom image, 1 means all left/top image.
+`swipe_compare(parent_el, image_1, image_2) -> Stream`
+
+Returns a stream wrapping a React component. Writing to the stream with a number between 0 and 1 sets the left/right percentage. 0 means all right/bottom image, 1 means all left/top image. The stream will emit when the percentage changes.
 
 Arguments:
 
@@ -151,11 +151,11 @@ Arguments:
 
 ### onion-skin compare
 
-`onion_skin_compare(parent_el, image_1, image_2) -> Stream`
-
 A widget that lets you compare/diff two images via opacity. The images are layered on top of one another, and a slider controls the opacity of the top image.
 
-Writing to the stream with a number between 0 and 1 sets the top/bottom percentage. 0 means all bottom image, 1 means all top image.
+`onion_skin_compare(parent_el, image_1, image_2) -> Stream`
+
+Returns a stream wrapping a react component. Writing to the stream with a number between 0 and 1 sets the top/bottom percentage. 0 means all bottom image, 1 means all top image. The stream also emits when the percentage changes.
 
 Arguments:
 
