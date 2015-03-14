@@ -27,7 +27,7 @@ var swiper = make_swiper(swiper_el, img1_url, img2_url)
 var swiper2 = make_swiper(swiper_el2, img3_url, img4_url)
 
 var onion_skin = make_onion_skin(onion_skin_el, img2_url, img1_url)
-var onion_skin = make_onion_skin(onion_skin_el, img3_url, img4_url)
+var onion_skin2 = make_onion_skin(onion_skin_el2, img3_url, img4_url)
 
 slider.on('data', function(data) {
   slider_display.innerHTML = data

@@ -4,7 +4,6 @@
 }
 
 .onion-skin-compare-contents .onion-skin-compare-bottom-wrapper {
-	z-index: 5;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -22,4 +21,18 @@
 
 .onion-skin-compare-contents .slider-wrapper input {
 	width: 65%;
+}
+
+.onion-skin-compare-top-wrapper,
+.onion-skin-compare-bottom-wrapper {
+	background-color: #fff;
+	background-image: linear-gradient(45deg, #DFDFDF 25%, transparent 25%, transparent 75%, #DFDFDF 75%, #DFDFDF), 
+	linear-gradient(45deg, #DFDFDF 25%, transparent 25%, transparent 75%, #DFDFDF 75%, #DFDFDF);
+	background-size: 12px 12px;
+	background-position: 0 0, 6px 6px;
+}
+
+.onion-skin-compare-top-image,
+.onion-skin-compare-bottom-image {
+	display: block;
 }
