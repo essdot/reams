@@ -1,4 +1,5 @@
 .swipe-compare-contents {
+	display: inline-block;
 	position: relative;
 
 	-moz-user-select: none;
@@ -22,14 +23,6 @@
 .swipe-compare-contents .swipe-compare-image {
 	vertical-align: top;
 	pointer-events: none;
-}
-
-.swipe-compare-contents .swipe-compare-bottom {
-	position: relative;
-	z-index: 5;
-}
-
-.swipe-compare-contents .swipe-compare-top {
 }
 
 .swipe-compare-contents .swipe-compare-top-wrapper {

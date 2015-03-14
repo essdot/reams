@@ -12,13 +12,4 @@
 			src="{this.props.image_2}"
 			onLoad={this.image_load_handler} />
 	</div>
-
-	<div class="swipe-compare-info">
-		<section class="swipe-compare-info-section swipe-compare-top-info">
-			{this.state.percent_string}
-		</section>
-		<section class="swipe-compare-info-section swipe-compare-bottom-info">
-			{this.state.reverse_percent_string}
-		</section>
-	</div>
 </div>

@@ -8,6 +8,19 @@ html {
   box-sizing: inherit;
 }
 
+body {
+	background: #CEDCDF;
+	font-family: Helvetica, "Lucida Grande", sans-serif;
+}
+
+main {
+	padding: 20px;
+}
+
+section {
+	margin-bottom: 50px;
+}
+
 .loading {
 	background: #FFFFF0;
 }
@@ -15,7 +28,7 @@ html {
 .autocomplete {
 	border: 1px solid #444;
 	border-radius: 20px;
-	margin: 20px 0;
+	margin-bottom: 30px;
 	padding: 10px;
 }
 
@@ -25,4 +38,9 @@ html {
 	background: lightblue;
 	border: 1px solid darkblue;
 	border-radius: 20px;
+}
+
+.onion-skin-wrapper,
+.swiper-wrapper {
+	margin-bottom: 30px;
 }

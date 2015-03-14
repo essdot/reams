@@ -11,23 +11,23 @@ var slider_display = document.querySelector('[name=slider-display]')
 var swiper_el = document.querySelector('[name=swiper-wrapper]')
 var swiper_el2 = document.querySelector('[name=swiper-wrapper2]')
 var onion_skin_el = document.querySelector('[name=onion-skin-wrapper]')
+var onion_skin_el2 = document.querySelector('[name=onion-skin-wrapper2]')
 
-var img1_url = 'img/img1.png'
-var img2_url = 'img/img2.png'
-var img3_url = 'https://raw.githubusercontent.com/cameronmcefee/' +
-  'Image-Diff-View-Modes/8bf009f5e2aaf3c363d64d4e013527589c810b7e/' +
-  '2_transparentPixels.png'
-
-var img4_url = 'https://raw.githubusercontent.com/cameronmcefee/' +
-  'Image-Diff-View-Modes/8e95f70c9c47168305970e91021072673d7cdad8/' +
-  '2_transparentPixels.png'
+var img1_url = 'img/img-without-monocle.png'
+var img2_url = 'img/img-with-monocle.png'
+var img3_url = 'img/img-opaque.png'
+var img4_url = 'img/img-trans-shadow.png'
 
 var auto = autocomplete(autocomplete_el, queryStream())
 var auto2 = autocomplete(autocomplete_el_2, queryStream())
+
 var slider = react_slider(slider_el)
+
 var swiper = make_swiper(swiper_el, img1_url, img2_url)
-var onion_skin = make_onion_skin(onion_skin_el, img2_url, img1_url)
 var swiper2 = make_swiper(swiper_el2, img3_url, img4_url)
+
+var onion_skin = make_onion_skin(onion_skin_el, img2_url, img1_url)
+var onion_skin = make_onion_skin(onion_skin_el, img3_url, img4_url)
 
 slider.on('data', function(data) {
   slider_display.innerHTML = data

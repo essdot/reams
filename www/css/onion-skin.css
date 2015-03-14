@@ -1,9 +1,6 @@
-.onion-skin-wrapper {
-	margin-top: 50px;
-}
-
 .onion-skin-compare-contents {
 	position: relative;
+	display: inline-block;
 }
 
 .onion-skin-compare-contents .onion-skin-compare-bottom-wrapper {
@@ -16,9 +13,6 @@
 .onion-skin-compare-contents .onion-skin-compare-top-wrapper {
 	position: relative;
 	z-index: 10;
-}
-
-.onion-skin-compare-contents .onion-skin-compare-bottom-image {
 }
 
 .onion-skin-compare-contents .onion-skin-info,
