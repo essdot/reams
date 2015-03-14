@@ -4,13 +4,13 @@ var react_slider = require('./lib/widgets/react-slider')
 var make_swiper = require('./lib/widgets/swipe-compare')
 var make_onion_skin = require('./lib/widgets/onion-skin-compare')
 
-var autocomplete_el = document.getElementById('autocomplete')
-var autocomplete_el_2 = document.getElementById('autocomplete2')
-var slider_el = document.getElementById('slider')
-var slider_display = document.querySelector('.slider-display')
-var swiper_el = document.getElementById('swiper-wrapper')
-var swiper_el2 = document.getElementById('swiper-wrapper2')
-var onion_skin_el = document.getElementById('onion-skin-wrapper')
+var autocomplete_el = document.querySelector('[name=autocomplete]')
+var autocomplete_el_2 = document.querySelector('[name=autocomplete2]')
+var slider_el = document.querySelector('[name=slider-wrapper]')
+var slider_display = document.querySelector('[name=slider-display]')
+var swiper_el = document.querySelector('[name=swiper-wrapper]')
+var swiper_el2 = document.querySelector('[name=swiper-wrapper2]')
+var onion_skin_el = document.querySelector('[name=onion-skin-wrapper]')
 
 var img1_url = 'img/img1.png'
 var img2_url = 'img/img2.png'
