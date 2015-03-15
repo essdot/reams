@@ -16,6 +16,9 @@ var auto = autocomplete(qs('[name=autocomplete]'), queryStream())
 var auto2 = autocomplete(qs('[name=autocomplete2]'), queryStream())
 
 var slider = make_slider(qs('[name=slider-wrapper]'))
+slider.pipe(el_stream(qs('[name=slider-display]')))
+
+slider.write(65)
 
 var swiper = make_swiper(qs('[name=swiper-wrapper]'), img1_url, img2_url)
 var swiper2 = make_swiper(qs('[name=swiper-wrapper2]'), img3_url, img4_url)
@@ -24,7 +27,3 @@ var onion_skin_el = qs('[name=onion-skin-wrapper]')
 var onion_skin_el2 = qs('[name=onion-skin-wrapper2]')
 var onion_skin = make_onion_skin(onion_skin_el, img2_url, img1_url)
 var onion_skin2 = make_onion_skin(onion_skin_el2, img3_url, img4_url)
-
-slider.pipe(el_stream(qs('[name=slider-display]')))
-
-slider.write(65)
