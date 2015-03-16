@@ -9,4 +9,8 @@
 	<div rt-if="!this.state.results.length && typeof this.state.query === 'string' && !this.state.loading">
 	<span class="info">No results found.</span>
 	</div>
+
+	<div rt-if="this.state.loading">
+		<img src="img/loading.gif"><span>Loading</span>
+	</div>
 </div>

@@ -22,10 +22,6 @@ section {
 	margin-bottom: 50px;
 }
 
-.loading {
-	background: #FFFFF0;
-}
-
 .autocomplete-wrapper {
 	border: 1px solid #444;
 	border-radius: 20px;
