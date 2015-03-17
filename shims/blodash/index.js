@@ -1,0 +1,152 @@
+var blodash = {
+	assign: assign,
+	defaults: assign,
+	flatten: flatten,
+	forEach: forEach,
+	map: map,
+	template: _template
+}
+
+module.exports = blodash
+
+function map(collection, func) {
+	var arr = [].slice.call(collection)
+
+	return arr.map(func)
+}
+
+function forEach(collection, func) {
+	var arr = [].slice.call(collection)
+
+	return arr.forEach(func)
+}
+
+function assign(obj) {
+	if(arguments.length < 2) { return obj }
+
+	var length = arguments.length
+	var keys, key, item
+
+	for(var i = 1; i < length; i++) {
+		item = arguments[i]
+		keys = Object.keys(item)
+
+		for(var k = 0; k < keys.length; k++) {
+			key = keys[k]
+			obj[key] = item[key]
+		}
+	}
+
+	return obj
+}
+
+// JavaScript micro-templating, similar to John Resig's implementation.
+// Underscore templating handles arbitrary delimiters, preserves whitespace,
+// and correctly escapes quotes within interpolated code.
+// NB: `oldSettings` only exists for backwards compatibility.
+function _template(text) {
+	var noMatch = /(.)^/
+  var settings = {
+    evaluate: /<%([\s\S]+?)%>/g,
+    interpolate: /<%=([\s\S]+?)%>/g,
+    escape: /<%-([\s\S]+?)%>/g
+  }
+  // Certain characters need to be escaped so that they can be put into a
+  // string literal.
+  var escapes = {
+    "'": "'",
+    '\\': '\\',
+    '\r': 'r',
+    '\n': 'n',
+    '\u2028': 'u2028',
+    '\u2029': 'u2029'
+  }
+
+  var escaper = /\\|'|\r|\n|\u2028|\u2029/g
+
+  var escapeChar = function(match) {
+    return '\\' + escapes[match]
+  }
+
+  // Combine delimiters into one regular expression via alternation.
+  var matcher = RegExp([
+    (settings.escape || noMatch).source,
+    (settings.interpolate || noMatch).source,
+    (settings.evaluate || noMatch).source
+  ].join('|') + '|$', 'g')
+
+  // Compile the template source, escaping string literals appropriately.
+  var index = 0
+  var source = "__p+='"
+  text.replace(matcher, function(match, escape, interpolate, evaluate, offset) {
+    source += text.slice(index, offset).replace(escaper, escapeChar)
+    index = offset + match.length
+
+    if (escape) {
+      source += "'+\n((__t=(" + escape + "))==null?'':_.escape(__t))+\n'"
+    } else if (interpolate) {
+      source += "'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'"
+    } else if (evaluate) {
+      source += "';\n" + evaluate + "\n__p+='"
+    }
+
+    // Adobe VMs need the match returned to produce the correct offest.
+    return match
+  })
+  source += "';\n"
+
+  // If a variable is not specified, place data values in local scope.
+  if(!settings.variable) {
+		source = 'with(obj||{}){\n' + source + '}\n'
+  }
+
+  source = "var __t,__p='',__j=Array.prototype.join," +
+    "print=function(){__p+=__j.call(arguments,'');};\n" +
+    source + 'return __p;\n'
+
+  try {
+    var render = new Function(settings.variable || 'obj', '_', source)
+  } catch (e) {
+    e.source = source
+    throw e
+  }
+
+  var template = function(data) {
+    return render.call(this, data, blodash)
+  }
+
+  // Provide the compiled source as a convenience for precompilation.
+  var argument = settings.variable || 'obj'
+  template.source = 'function(' + argument + '){\n' + source + '}'
+
+  return template
+}
+
+// Internal implementation of a recursive `flatten` function.
+function _flatten(input, shallow, strict, startIndex) {
+  var output = [], idx = 0, length = input.length
+
+	for (var i = startIndex || 0; i < length; i++) {
+    var value = input[i]
+    if (Array.isArray(value)) {
+      //flatten current level of array or arguments object
+      if (!shallow) value = flatten(value, shallow, strict)
+
+      var j = 0, len = value.length
+
+      output.length += len
+
+      while (j < len) {
+        output[idx++] = value[j++]
+      }
+    } else if (!strict) {
+      output[idx++] = value
+    }
+  }
+  return output
+}
+
+// Flatten out an array, either recursively (by default), or just one level.
+function flatten(array, shallow) {
+  return _flatten(array, shallow, false)
+}
